@@ -1,4 +1,4 @@
-# Chat CLI Assistant
+# Chat_CLI Assistant
 
 A command-line assistant powered by a Language Model API (LLM), allowing you to interact with an AI directly from your terminal.
 
