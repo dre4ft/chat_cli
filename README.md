@@ -8,6 +8,12 @@ A command-line assistant powered by a Language Model API (LLM), allowing you to 
 - Interactive command-line interface to send custom messages.
 - Displays model-generated responses directly in the terminal.
 
+## TODO 
+- make env variable for API_KEY and the model
+- choose which model you want
+- add more context
+- choose the parameters such as temp and tokens numbers 
+
 ## Prerequisites
 
 - Python 3.x
