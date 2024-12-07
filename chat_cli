@@ -1,0 +1,38 @@
+#! /usr/local/bin/python3
+from groq import Groq
+
+# YOUR API KEY 
+GROQ_API_KEY = "YOUR_API_KEY"
+
+#last message for context + base prompt to tell the AI what their are 
+last_msg = ""
+base_prompt = """YOUR BASELINE PROMPT (dont forget to add at the end 'here is your last message for context : ' )"""
+
+
+client = Groq(
+    api_key=GROQ_API_KEY,
+)
+
+while True :
+
+    user_message = input("Enter your prompt: ")
+    print("\nAssistant's Response: \n")
+
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": base_prompt+last_msg,
+            },
+            {
+                "role": "user",
+                "content": user_message,
+            }
+        ],
+        model="llama3-8b-8192",
+    )
+
+    print(chat_completion.choices[0].message.content)
+    last_msg = user_message
+    print("\n -------------------------------- \n")
+
